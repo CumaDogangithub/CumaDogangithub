@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="170" viewBox="0 0 440 170" fill="none" role="img" aria-label="Yerel KVKK maskeleme akisi">
+  <style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+  <rect width="440" height="170" fill="#0B0E14"/>
+  <defs>
+    <pattern id="g3" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#1E293B" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="w3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#34D399" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="170" fill="url(#g3)"/>
+
+  <text x="20" y="28" font-family="monospace" font-size="11" fill="#38BDF8">metin + görsel  →  yerelde maskele</text>
+
+  <g font-family="monospace" font-size="11" fill="#E2E8F0" text-anchor="middle">
+    <rect x="18"  y="66" width="80" height="38" rx="7" fill="#0B0E14" stroke="#38BDF8"/>
+    <text x="58" y="83">Girdi</text>
+    <text x="58" y="96" font-size="9" fill="#94A3B8">EasyOCR</text>
+    <rect x="152" y="66" width="86" height="38" rx="7" fill="#0B0E14" stroke="#A78BFA"/>
+    <text x="195" y="82">qwen2.5</text>
+    <text x="195" y="96" font-size="9" fill="#94A3B8">Ollama · yerel</text>
+    <rect x="292" y="66" width="86" height="38" rx="7" fill="#0B0E14" stroke="#34D399"/>
+    <text x="335" y="83">Maskeli</text>
+    <text x="335" y="96" font-size="9" fill="#94A3B8">blur / pixel</text>
+  </g>
+
+  <path d="M98 85 H152" stroke="url(#w3)" stroke-width="2"/>
+  <path d="M238 85 H292" stroke="url(#w3)" stroke-width="2"/>
+
+  <circle r="3.5" fill="#38BDF8">
+    <animateMotion dur="1.8s" repeatCount="indefinite" path="M98 85 H152"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="3.5" fill="#34D399">
+    <animateMotion dur="2s" begin="0.4s" repeatCount="indefinite" path="M238 85 H292"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="195" cy="85" r="46" fill="none" stroke="#A78BFA" stroke-width="1">
+    <animate attributeName="r" values="30;52" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="20" y="140" font-family="monospace" font-size="9" fill="#475569">%0 bulut transferi · bağlam farkındalığı · F1 0.92</text>
+</svg>

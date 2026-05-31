@@ -1,92 +1,67 @@
-<!-- ============ LIVED-IN BLUEPRINT · COMMAND CENTER ============ -->
+<!-- ============ LIVED-IN BLUEPRINT ============ -->
 
-<h1 align="center">
-  <code>&lt; Cuma Doğan / System Architect &gt;</code>
-</h1>
+<h1 align="center">Cuma Doğan</h1>
 
 <p align="center">
-  <em>Kutu çizmiyorum — sistem akışı tasarlıyorum.</em><br/>
-  <sub>AI Engineering · Distributed Systems · Real-Time Data Pipelines</sub>
+  Yapay zekâ, dağıtık sistemler ve veri hatları üzerine çalışıyorum.<br/>
+  <sub>Projelerimi uçtan uca kuruyorum — modelden arayüze, container'dan deploy'a kadar.</sub>
 </p>
 
-<!-- LIVE DATA FLOW HEADER -->
 <p align="center">
-  <img src="./assets/data-flow.svg?v=1" width="100%" alt="Live system data flow — GraphQL → ML Engine → Kafka"/>
+  <img src="./assets/data-flow.svg?v=2" width="100%" alt="Tipik mimari iskeletim: Next.js → API → AI modeli → veritabanı"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Ollama-000?style=flat-square&logo=ollama&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
 </p>
 
 ---
 
-## 🧭 System Command Center
+## Öne çıkan projeler
 
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart LR
-    subgraph CLIENT["🖥️ Edge / Client"]
-        A[Next.js App]
-    end
-    subgraph GATEWAY["⚡ API Mesh"]
-        B{{GraphQL Gateway}}
-        C[[Auth / Rate-Limit]]
-    end
-    subgraph CORE["🧠 Intelligence Layer"]
-        D[ML Inference Engine]
-        E[(Vector Store)]
-    end
-    subgraph DATA["💾 State & Streams"]
-        F[(PostgreSQL)]
-        G>Kafka Event Bus]
-    end
-    A -->|GraphQL| B
-    B --> C
-    C -->|gRPC| D
-    D <-->|embeddings| E
-    D -->|infer result| G
-    G -->|persist| F
-    B -.->|cache read| F
-    classDef edge fill:#0B0E14,stroke:#38BDF8,color:#38BDF8;
-    classDef ai fill:#0B0E14,stroke:#A78BFA,color:#A78BFA;
-    classDef data fill:#0B0E14,stroke:#FBBF24,color:#FBBF24;
-    class A,B,C edge;
-    class D,E ai;
-    class F,G data;
-```
-
----
-
-## 🛰️ Project Pods
+Aşağıdaki üçü, kendi projelerimden mimari olarak en çok uğraştıklarım. Her birinin küçük, hareketli akış şeması yanında.
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td valign="top">
 
-### 🧠 NeuroScan · Medical Imaging AI
-<img src="./assets/pod-medical.svg?v=1" width="100%" alt="NeuroScan architecture"/>
+### 🩺 Akıllı Tıbbi Görüntü Analiz Sistemi
+<img src="./assets/pod-medical.svg?v=2" width="100%" alt="Tıbbi görüntü analiz akışı"/>
 
-**Flow:** `DICOM → Flask → TensorFlow CNN → Grad-CAM`
+CT, MR ve röntgen görüntülerini EfficientNetV2-M tabanlı bir modelle işleyip hekime ön tanı desteği veren platform. DICOM ön işleme hattı, rol bazlı erişim (doktor / radyolog / akademisyen) ve Cloudflare → Nginx → Docker → Flask şeklinde konumlandırılmış bir servis katmanı içeriyor.
 
-<sub>
-<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
-<img src="https://img.shields.io/badge/Flask-000?style=flat-square&logo=flask"/>
-<img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs"/>
-</sub>
-<br/>
-<sub>⚡ 94% accuracy · 120ms inference · Grad-CAM explainability</sub>
+<sub>Python · TensorFlow/Keras · Flask · OpenCV · Supabase · Docker</sub>
 
 </td>
-<td width="50%" valign="top">
+</tr>
+<tr>
+<td valign="top">
 
-### 📈 QuantForge · Algo Trading Engine
-<img src="./assets/pod-trading.svg?v=1" width="100%" alt="QuantForge architecture"/>
+### 🧪 StandAi — Sentetik Tüketici Paneli
+<img src="./assets/pod-stand.svg?v=2" width="100%" alt="Sentetik tüketici paneli akışı"/>
 
-**Flow:** `Market Feed → C++ Ingestor → Python Signals → MQL5 Exec`
+Bir reklam ya da ürün metnini, TÜİK demografisine göre katmanlı örneklenmiş ~1000 sentetik persona üzerinde test eden B2B araç. Celery + Redis ile kuyruğa alınan istekler Gemini Flash'a toplu (10 persona/çağrı) gidiyor; sonuçlar pgvector (768D) ile anlamsal olarak kümeleniyor. Tam bir test ~12 dakikada tamamlanıyor.
 
-<sub>
-<img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/MQL5-2E8B57?style=flat-square"/>
-</sub>
-<br/>
-<sub>⚡ sub-ms tick processing · risk-gated execution · backtested</sub>
+<sub>Next.js · FastAPI · Celery/Redis · pgvector · Google Generative AI · Docker Compose</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### 🛡️ textSansür — Yerel KVKK Maskeleme
+<img src="./assets/pod-censor.svg?v=2" width="100%" alt="Yerel KVKK maskeleme akışı"/>
+
+Metin ve görsellerdeki kişisel veriyi tamamen yerelde — buluta hiçbir şey göndermeden — maskeleyen araç. Ollama üzerinde qwen2.5:14b bağlamı çözüyor (örn. mağdurun adını maskeler, dolandırıcınınkini bırakır), EasyOCR görseldeki metni yakalıyor, tarayıcıdaki canvas editöründe blur/pixel/bant uygulanıyor.
+
+<sub>Python · Ollama (qwen2.5) · EasyOCR · Flask · Docker · %0 bulut transferi</sub>
 
 </td>
 </tr>
@@ -94,47 +69,44 @@ flowchart LR
 
 ---
 
-## ⚙️ Capability Reactors
+## Diğer çalıştıklarım
 
-<table>
-<tr>
-<td width="50%" align="center" valign="top">
-<sub><b>System Efficiency</b></sub><br/>
-<img src="./assets/complexity.svg?v=1" width="90%" alt="O(n) optimized to O(log n)"/>
-</td>
-<td width="50%" align="center" valign="top">
-<sub><b>Cloud Autoscaling</b></sub><br/>
-<img src="./assets/k8s-scale.svg?v=1" width="90%" alt="Kubernetes pods autoscaling"/>
-</td>
-</tr>
-</table>
+| Proje | Ne yapıyor | Yığın |
+|---|---|---|
+| **myHackBot** | Komut allowlist'i ve enjeksiyon korumasıyla çalışan, araç çağıran etik (white-hat) güvenlik asistanı | Python · Ollama · Tkinter · faster-whisper |
+| **claude_sohbet** | SIR/SEIR modeliyle salgın yayılımını simüle eden ve canlı grafikleyen panel | Next.js · FastAPI · Recharts |
+| **screenEnergy** | Çok monitörlü kurulumlarda poz tespitine göre ekran/enerji yönetimi | Python · MediaPipe · OpenCV |
+| **akaryakit-listeleme** | Türkiye akaryakıt fiyatlarını harita üzerinde karşılaştıran MVP | Next.js 14 · Leaflet · Tailwind |
+| **FIRATHUB2** | Üniversite içi akademisyen–öğrenci eşleştirme ve işbirliği platformu | Web · AI öneri |
 
 ---
 
-## 🛠️ Workspace Architecture
+## Nasıl çalışıyorum
+
+Tek bir desen üç projede de tekrar ediyor: ince bir arayüz, işi yapan bir API katmanı, arkada bir model (yerel ya da bulut) ve durumun yaşadığı bir veritabanı. Çoğunu Docker'la paketleyip kendi sunucuma alıyorum.
 
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 flowchart LR
-    subgraph WS["⌨️ Workspace"]
+    subgraph WS["Geliştirme"]
         OS[Windows 11 + WSL2]
-        ED[VS Code · Neovim]
+        ED[VS Code]
     end
-    subgraph LOCAL["🐳 Local Cluster"]
-        DK[Docker Desktop]
-        K8[Minikube]
+    subgraph LOCAL["Yerel"]
+        DK[Docker]
+        ML[Ollama / TF]
     end
-    subgraph CLOUD["☁️ Targets"]
-        AWS[AWS / GCP]
+    subgraph CLOUD["Dağıtım"]
+        SRV[Nginx + Cloudflare]
     end
-    ED --> OS --> DK --> K8 -.deploy.-> AWS
+    ED --> OS --> DK
+    DK --> ML
+    DK -.deploy.-> SRV
     classDef d fill:#0B0E14,stroke:#38BDF8,color:#E2E8F0;
-    class OS,ED,DK,K8,AWS d;
+    class OS,ED,DK,ML,SRV d;
 ```
 
 ---
-
-## 📡 Telemetry · Hologram Panels
 
 <table>
 <tr>
@@ -142,13 +114,9 @@ flowchart LR
 <img src="https://github-readme-stats.vercel.app/api?username=CumaDogangithub&show_icons=true&hide_border=true&bg_color=0B0E14&title_color=38BDF8&icon_color=A78BFA&text_color=E2E8F0"/>
 </td>
 <td>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=CumaDogangithub&hide_border=true&background=0B0E14&stroke=1E293B&ring=38BDF8&fire=FBBF24&currStreakLabel=38BDF8"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CumaDogangithub&layout=compact&hide_border=true&bg_color=0B0E14&title_color=38BDF8&text_color=E2E8F0"/>
 </td>
 </tr>
 </table>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=CumaDogangithub&bg_color=0B0E14&color=38BDF8&line=A78BFA&point=FBBF24&hide_border=true&area=true" width="100%"/>
-
-<p align="center">
-  <sub>// Projects are not isolated — they are nodes of the same engineering philosophy.</sub>
-</p>
