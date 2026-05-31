@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="160" viewBox="0 0 300 160" fill="none" role="img" aria-label="Complexity optimized from O(n) to O(log n)">
+  <style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+  <rect width="300" height="160" fill="#0B0E14"/>
+  <line x1="30" y1="130" x2="280" y2="130" stroke="#1E293B"/>
+  <line x1="30" y1="20"  x2="30"  y2="130" stroke="#1E293B"/>
+  <path fill="none" stroke="#FBBF24" stroke-width="2.5">
+    <animate attributeName="d" dur="4s" repeatCount="indefinite"
+      values="M30 130 L120 30 L210 25 L280 22;M30 130 Q90 60 160 50 T280 45;M30 130 Q70 90 150 80 T280 78;M30 130 L120 30 L210 25 L280 22"/>
+    <animate attributeName="stroke" values="#FBBF24;#38BDF8;#38BDF8;#FBBF24" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <text x="155" y="150" font-family="monospace" font-size="12" fill="#38BDF8" text-anchor="middle">O(n) → O(log n)
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+  </text>
+  <text x="240" y="40" font-family="monospace" font-size="11" fill="#34D399" text-anchor="middle">OPTIMIZED
+    <animate attributeName="opacity" values="0;0;1;0" dur="4s" repeatCount="indefinite"/>
+  </text>
+</svg>

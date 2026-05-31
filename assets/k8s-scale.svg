@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120" fill="none" role="img" aria-label="Kubernetes autoscaling pods">
+  <style>@media (prefers-reduced-motion: reduce){*{animation:none!important;opacity:1!important}}</style>
+  <rect width="300" height="120" fill="#0B0E14"/>
+  <text x="12" y="22" font-family="monospace" font-size="12" fill="#38BDF8">replicas: autoscaling…</text>
+  <g transform="translate(20,45)">
+    <rect width="40" height="40" rx="6" fill="#0B0E14" stroke="#38BDF8"/>
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </g>
+  <g transform="translate(75,45)" opacity="0">
+    <rect width="40" height="40" rx="6" fill="#0B0E14" stroke="#38BDF8"/>
+    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.6s" fill="freeze"/>
+  </g>
+  <g transform="translate(130,45)" opacity="0">
+    <rect width="40" height="40" rx="6" fill="#0B0E14" stroke="#A78BFA"/>
+    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.2s" fill="freeze"/>
+  </g>
+  <g transform="translate(185,45)" opacity="0">
+    <rect width="40" height="40" rx="6" fill="#0B0E14" stroke="#A78BFA"/>
+    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.8s" fill="freeze"/>
+  </g>
+  <g transform="translate(240,45)" opacity="0">
+    <rect width="40" height="40" rx="6" fill="#0B0E14" stroke="#FBBF24"/>
+    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.4s" fill="freeze"/>
+  </g>
+</svg>
