@@ -81,6 +81,25 @@ Metin ve görsellerdeki kişisel veriyi tamamen yerelde — buluta hiçbir şey 
 
 ---
 
+## Üzerinde durduğum şeyler
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+<sub><b>Karmaşıklığı düşürmek</b></sub><br/>
+<img src="./assets/complexity.svg?v=2" width="90%" alt="O(n) karmaşıklığını O(log n)'e indirme"/><br/>
+<sub>Sıcak yollarda algoritmik maliyeti ölçüp azaltmak.</sub>
+</td>
+<td width="50%" align="center" valign="top">
+<sub><b>Ölçeklenebilir dağıtım</b></sub><br/>
+<img src="./assets/k8s-scale.svg?v=2" width="90%" alt="Yük altında ölçeklenen container'lar"/><br/>
+<sub>Container'ları yüke göre büyüyüp küçülecek şekilde kurmak.</sub>
+</td>
+</tr>
+</table>
+
+---
+
 ## Nasıl çalışıyorum
 
 Tek bir desen üç projede de tekrar ediyor: ince bir arayüz, işi yapan bir API katmanı, arkada bir model (yerel ya da bulut) ve durumun yaşadığı bir veritabanı. Çoğunu Docker'la paketleyip kendi sunucuma alıyorum.
